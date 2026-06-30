@@ -1,0 +1,71 @@
+Test ID,Title,Description,Steps,Expected Results,Priority,Test Type,Source
+TC-2095-01,CoverageList_Alphabetical_Order,Verify coverage rows are sorted alphabetically by Coverage Name in the Sub Limits table,"1. Login to EzDocs.
+2. Open an Energy Property submission.
+3. Go to the Coverage tab.
+4. Scroll to the Sub Limits section.
+5. Inspect the Coverage Name entries from top to bottom.
+6. Refresh the Coverage tab or reload the page.
+7. Confirm the alphabetical order is preserved.",Coverage rows are displayed in alphabetical order by Coverage Name and the order remains consistent after refresh.,High,Functional,[OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md](OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md) - AC1
+TC-2095-02,CoverageList_Alphabetical_Order_BlankName,Verify blank or missing Coverage Name entries are placed after valid names,"1. Login to EzDocs.
+2. Open an Energy Property submission.
+3. Go to the Coverage tab.
+4. Add or locate a coverage row with a blank or missing Coverage Name.
+5. Refresh the coverage list.
+6. Inspect the list ordering.
+7. Confirm valid coverage names appear before blank entries.",Blank or missing Coverage Name entries appear after all valid coverage names, and valid entries remain in alphabetical order.,High,Negative;Functional,[OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md](OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md) - AC1;AC6
+TC-2095-03,CoverageList_SpecialCharactersSorting,Verify coverage names with punctuation, numbers, or long text sort correctly,"1. Login to EzDocs.
+2. Open an Energy Property submission.
+3. Go to the Coverage tab.
+4. Add or identify coverage rows with punctuation, numeric characters, and long names.
+5. Refresh or reload the coverage list.
+6. Confirm the entries are sorted in stable alphabetical order.",Coverage names containing punctuation, numbers, and long text are sorted correctly without breaking the table layout.,High,Functional,[OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md](OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md) - AC6
+TC-2095-04,ScrollBar_Appears_InContainer,Verify the coverage list container displays a vertical scroll bar when content is taller than the view area,"1. Login to EzDocs.
+2. Open an Energy Property submission.
+3. Go to the Coverage tab.
+4. Scroll to the Sub Limits section.
+5. Confirm the coverage list has more rows than fit in the visible container.
+6. Observe the coverage list for a vertical scroll bar.
+7. Scroll within the coverage container.",A vertical scroll bar appears inside the coverage list container when content exceeds the visible area, and scrolling works only within the coverage list region.,High,Functional,[OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md](OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md) - AC2
+TC-2095-05,ScrollBar_Container_NotFullPage,Verify vertical scrolling is limited to the coverage list region,"1. Login to EzDocs.
+2. Open an Energy Property submission.
+3. Go to the Coverage tab.
+4. Scroll to the Sub Limits section.
+5. Ensure the coverage list is long enough to require scrolling.
+6. Scroll inside the coverage container.
+7. Confirm the main page body does not move with the internal scroll.",Scrolling occurs within the coverage list container only; the main page content remains static during coverage list scrolling.,High,Negative;Usability,[OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md](OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md) - AC2
+TC-2095-06,Pagination_Controls_Present_TopAndBottom,Verify pagination controls appear at both top and bottom of the coverage list,"1. Login to EzDocs.
+2. Open an Energy Property submission.
+3. Go to the Coverage tab.
+4. Scroll to the Sub Limits section.
+5. Check for pagination controls above the coverage list.
+6. Check for pagination controls below the coverage list.
+7. Confirm both display the current page and record count.",Pagination controls are visible above and below the coverage list, and both show the same page number and total record count.,High,Functional,[OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md](OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md) - AC3
+TC-2095-07,Pagination_TopControl_Navigation,Verify top pagination controls can navigate pages correctly,"1. Login to EzDocs.
+2. Open an Energy Property submission.
+3. Go to the Coverage tab.
+4. Use the top controls to go to the next page.
+5. Use the top controls to go to the previous page.
+6. Use the top controls to go to the first page.
+7. Use the top controls to go to the last page.",Top pagination controls navigate correctly between first, previous, next, and last pages and update the coverage list accordingly.,High,Functional,[OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md](OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md) - AC4
+TC-2095-08,Pagination_BottomControl_Navigation,Verify bottom pagination controls can navigate pages correctly,"1. Login to EzDocs.
+2. Open an Energy Property submission.
+3. Go to the Coverage tab.
+4. Use the bottom controls to go to the next page.
+5. Use the bottom controls to go to the previous page.
+6. Use the bottom controls to go to the first page.
+7. Use the bottom controls to go to the last page.",Bottom pagination controls navigate correctly between first, previous, next, and last pages and update the coverage list accordingly.,High,Functional,[OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md](OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md) - AC4
+TC-2095-09,Pagination_TopBottom_Sync,Verify top and bottom pagination controls remain synchronized after navigation,"1. Login to EzDocs.
+2. Open an Energy Property submission.
+3. Go to the Coverage tab.
+4. Use the top pagination controls to move to a new page.
+5. Verify the bottom pagination controls match the same page state.
+6. Use the bottom controls to move to another page.
+7. Verify the top controls match the same page state.
+8. Confirm the coverage rows display the expected page contents.",Top and bottom pagination controls remain synchronized; changing page from one set updates the other set to the same state and content.,High,Functional,[OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md](OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md) - AC4
+TC-2095-10,InformationalRows_StablePosition,Verify informational header rows are not sorted with coverage rows,"1. Login to EzDocs.
+2. Open an Energy Property submission.
+3. Go to the Coverage tab.
+4. Scroll to the Sub Limits section.
+5. Locate the informational row (e.g., 'LIMITS ARE APPLICABLE...').
+6. Inspect the coverage row ordering below it.
+7. Confirm the informational row remains above the coverage list and does not move.",Informational header rows remain in place and are not included in the alphabetical sorting of coverage rows.,High,Functional,[OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md](OptimusCore/01_BaseRepo/UserStory/2095-detailed-steps.md) - AC5

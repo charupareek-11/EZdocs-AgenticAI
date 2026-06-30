@@ -1,0 +1,89 @@
+Test ID,Test Case Name,Description,Test Type,Priority,Category,User Story,Acceptance Criteria,Steps,Expected Results,Notes
+TC_1818_001,Send for Booking popup appears,Verify the premium breakdown popup appears when the user clicks Send for booking in the booking flow.,Manual,High,Booking Popup,OptimusCore/01_BaseRepo/UserStory/1818.md,"Popup displayed on clicking “Send for Booking”","1. Login to EZDocs.
+2. Select the required LOB and product.
+3. Fill all required submission fields and create a quote.
+4. Preview the document if available.
+5. Navigate to the booking flow and click Send for booking.","1. The premium breakdown popup appears immediately after clicking Send for booking.
+2. The underlying screen remains visible but inactive.
+3. No booking completes until the popup is acted on.",Traceable to Navigation_Steps.md and 1818 acceptance criteria
+TC_1818_002,Premium breakdown fields visible,Verify the popup displays coverage-wise premium fields and total premium values clearly.,Manual,High,Premium Validation,OptimusCore/01_BaseRepo/UserStory/1818.md,"Shows coverage-wise premium and total premium.","1. Login to EZDocs.
+2. Open an existing submission or create a new eligible quote.
+3. Complete required fields and navigate to Send for booking.
+4. Click Send for booking and review the popup.","1. Coverage-wise premium fields for POED, EQ, Flood, BM and Line Level Premium are visible.
+2. Total premium displays clearly in the popup.
+3. Each premium value is labeled correctly.",Includes required navigation and UI review steps
+TC_1818_003,Popup includes Send and Cancel actions,Verify the popup includes both Send for booking and Cancel buttons inside the window.,Manual,High,UI Controls,OptimusCore/01_BaseRepo/UserStory/1818.md,"User options: Send for booking/Cancel button inside popup.","1. Login to EZDocs.
+2. Create or open a valid submission.
+3. Click Send for booking.
+4. Inspect the popup buttons.","1. The popup contains a Send for booking button.
+2. The popup contains a Cancel button.
+3. Both buttons are accessible and recognizable.",UI element validation for booking popup
+TC_1818_004,Cancel closes popup without booking,Verify clicking Cancel closes the popup and the booking does not proceed.,Manual,Medium,Negative,OptimusCore/01_BaseRepo/UserStory/1818.md,"Booking proceeds only on clicking send for booking button inside popup window.","1. Login to EZDocs.
+2. Open a submission and click Send for booking.
+3. Click Cancel in the popup.
+4. Confirm no booking confirmation appears.","1. The popup closes immediately.
+2. The submission returns to the previous state.
+3. The booking action is not completed.",Negative scenario for popup cancellation
+TC_1818_005,Booking proceeds only from popup action,Verify booking only proceeds when the user clicks Send for booking inside the popup, not from the underlying page.,Manual,High,Booking Flow,OptimusCore/01_BaseRepo/UserStory/1818.md,"Booking proceeds only on clicking “send for booking button” inside popup window.","1. Login to EZDocs.
+2. Create or open a valid quote.
+3. Click Send for booking.
+4. Click the Send for booking button in the popup.
+5. Confirm booking completes.
+6. Repeat flow and close with Cancel to verify no booking occurs.","1. Booking confirmation appears only after clicking the popup button.
+2. The underlying page does not send booking without popup confirmation.
+3. Cancel prevents booking.",Confirms booking gating behavior
+TC_1818_006,Line Level Premium sourced correctly,Verify the popup uses Line Level Premium from the Total Policy Premium value on the eZdocs Information page.,Manual,High,Data Integrity,OptimusCore/01_BaseRepo/UserStory/1818.md,"Line Level Premium = “Total Policy Premium” from eZdocs Information page.","1. Login to EZDocs.
+2. Open a submission and navigate to the eZdocs Information page.
+3. Note the Total Policy Premium value.
+4. Click Send for booking.
+5. Confirm Line Level Premium on the popup matches the noted value.","1. Line Level Premium on the popup matches the Total Policy Premium value.
+2. No discrepancy exists between the information page and popup.",Maps eZdocs info page to popup display
+TC_1818_007,Manual premium fields accept valid values,Verify POED, EQ, Flood and BM premium fields accept manual numeric values.,Manual,High,Field Entry,OptimusCore/01_BaseRepo/UserStory/1818.md,"POED Premium = Manual Entry field; EQ Premium = Manual Entry field; Flood Premium = Manual Entry field; BM Premium = Manual Entry field.","1. Login to EZDocs.
+2. Open a submission and click Send for booking.
+3. Enter valid numeric values into POED, EQ, Flood and BM fields.
+4. Confirm the Total field updates.","1. Manual premium fields accept valid numeric entries.
+2. No validation errors appear for valid values.
+3. Total auto-calculates based on entered values.",Includes manual entry validation
+TC_1818_008,Total auto-calculates and validates,Verify the popup auto-populates Total as the sum of POED, EQ, Flood and BM premiums and validates it against Line Level Premium.,Manual,High,Calculation,OptimusCore/01_BaseRepo/UserStory/1818.md,"Total = Auto Populate this field = Sum of 2+3+4+5 points above and validate it matches Line Level Premium.","1. Login to EZDocs.
+2. Open a submission and click Send for booking.
+3. Enter values for POED, EQ, Flood and BM.
+4. Confirm the Total field value.
+5. Compare Total to Line Level Premium.","1. Total is auto-calculated as POED + EQ + Flood + BM.
+2. Total updates immediately after each change.
+3. If Total equals Line Level Premium, booking can proceed.
+4. If there is a mismatch, a validation error is displayed.",Validates auto-calculation and reconciliation
+TC_1818_009,Total mismatch blocks booking,Verify an error is displayed and booking is blocked when manual premium sum does not equal Line Level Premium.,Manual,High,Negative,OptimusCore/01_BaseRepo/UserStory/1818.md,"Total should be same as value in point#1.","1. Login to EZDocs.
+2. Open a submission and click Send for booking.
+3. Enter values for POED, EQ, Flood and BM that do not sum to Line Level Premium.
+4. Attempt to click Send for booking in the popup.","1. A validation error indicates the total does not match Line Level Premium.
+2. The popup blocks the booking action until corrected.
+3. The user cannot proceed with incorrect totals.",Negative validation scenario
+TC_1818_010,FX rate values displayed and validated,Verify FX rate values display on the popup and do not break premium calculations.,Manual,Medium,Integration,OptimusCore/01_BaseRepo/UserStory/1818.md,"Note- We can add FX rate validation/ values on same pop up.","1. Login to EZDocs.
+2. Open a submission with FX-rate-sensitive premium data.
+3. Click Send for booking.
+4. Verify FX rate or conversion values are visible on the popup.
+5. Enter manual premium values and review validation.","1. FX rate values or conversion notes are displayed when applicable.
+2. Premium calculations remain correct with FX values.
+3. Total validation continues to function properly.
+4. No mismatch occurs due to FX display.",Validates FX handling in booking popup
+TC_1818_011,Multi-product coverage behavior,Verify the premium breakdown popup works for Property Energy, General Property, and Received Property products.,Manual,High,Product Coverage,OptimusCore/01_BaseRepo/UserStory/1818.md,"For Property Energy, General Property, Received Property.","1. Login to EZDocs.
+2. Create or open a Property Energy submission and click Send for booking.
+3. Verify popup fields and validation.
+4. Repeat for General Property.
+5. Repeat for Received Property.","1. The popup appears and functions for Property Energy, General Property, and Received Property.
+2. Coverage-wise premium fields are present for each product.
+3. Total validation and booking gating behave consistently.
+4. No coverage type is excluded from popup behavior.",Covers all product types in acceptance criteria
+TC_1818_012,Invalid premium values rejected,Verify invalid premium entries are rejected and booking is blocked until corrected.,Manual,High,Negative,OptimusCore/01_BaseRepo/UserStory/1818.md,"POED Premium = Manual Entry field; EQ Premium = Manual Entry field; Flood Premium = Manual Entry field; BM Premium = Manual Entry field.","1. Login to EZDocs.
+2. Open a submission and click Send for booking.
+3. Enter invalid values such as letters, negative numbers, or excessively large amounts into POED, EQ, Flood, or BM fields.
+4. Attempt to proceed with booking.","1. Invalid entries are rejected or flagged with validation messages.
+2. The Total field does not accept invalid values.
+3. Booking remains blocked until valid values are entered.",Negative input validation
+TC_1818_013,Zero and boundary premium handling,Verify zero or boundary premium values calculate correctly and the popup validates totals.,Manual,Medium,Boundary,OptimusCore/01_BaseRepo/UserStory/1818.md,"Total = Auto Populate this field = Sum of 2+3+4+5 points above and validate it matches Line Level Premium.","1. Login to EZDocs.
+2. Open a submission and click Send for booking.
+3. Enter 0 or boundary premium values into one or more of POED, EQ, Flood, and BM fields.
+4. Confirm the Total field and attempt booking.","1. Zero values are handled correctly if allowed and included in the Total.
+2. Total calculates correctly for boundary values.
+3. The popup validates the Total against Line Level Premium.
+4. Booking is permitted only when totals match and values are valid.",Boundary and edge-case validation

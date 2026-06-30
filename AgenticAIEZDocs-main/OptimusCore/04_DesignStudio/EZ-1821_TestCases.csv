@@ -1,0 +1,57 @@
+Test ID,Title,Description,Steps,Expected Results,Priority,Test Type,Source
+TC-1821-01,PolicyLimit_Field_Present_In_Information_Tab,Verify `Policy Limit` is present and identifiable on the Information tab in EzDocs,"1. Login to ez docs application
+2. Select required LOB
+3. Select required product
+4. Navigate to the Information tab
+5. Inspect the screen for `Policy Limit` field","`Policy Limit` field is present on the Information tab and clearly identifiable in the UI.",High,UI;Navigation,[OptimusCore/01_BaseRepo/UserStory/1821.md]
+TC-1821-02,PolicyLimit_Mapped_To_Payload_Correctly,Verify `Policy Limit` value is mapped and sent correctly in payload,"1. Login to ez docs application
+2. Select required LOB and product
+3. Navigate to Information tab
+4. Enter `Policy Limit` = 50,000,000
+5. Save and generate a payload
+6. Capture the outbound payload for the property flow","Payload contains `LimitOfLiability` with value 50,000,000 and the value matches `Policy Limit` entered in the Information tab.",High,Functional;Integration,[OptimusCore/01_BaseRepo/UserStory/1821.md]
+TC-1821-03,PropertyLimit_Consistency_With_Property_Implementation,Verify property payload implementation is consistent with existing property flows,"1. Login and select a property LOB under Automated Coding
+2. Enter `Policy Limit` and coverage values
+3. Generate the payload
+4. Compare payload fields for `LimitOfLiability`, `PDLimitOfLiability`, `EarthMovementLimit`, and `FloodLimit` against known property implementation outputs","Payload structure and field values are consistent with the property implementation: same field names, path semantics, and value mapping behavior.",High,Integration;Regression,[OptimusCore/01_BaseRepo/UserStory/1821.md]
+TC-1821-04,POEDLimit_Sent_To_ODS,Verify POED Limit is sent to ODS using the specified payload tag path,"1. Login and select required property LOB
+2. Enter a valid POED coverage limit value
+3. Save and generate payload
+4. Inspect payload for `PDLimitOfLiability` under `FormsList/Form/PropertyCoverageLimits/PropertyCoverageLimit`","Payload contains `PDLimitOfLiability` at `FormsList/Form/PropertyCoverageLimits/PropertyCoverageLimit/PDLimitOfLiability` and the value matches the source POED limit.",High,Functional;Integration,[OptimusCore/01_BaseRepo/UserStory/1821.md]
+TC-1821-05,EQLimit_Sent_Using_EarthMovement_Or_Earthquake,Verify EQ limit is sent using Earth Movement or Earthquake as available,"1. Login and select required property LOB
+2. On Described Causes of Losses, enter `Earth Movement` limit only
+3. Save and generate payload
+4. Inspect payload for `EarthMovementLimit`
+5. Repeat with `Earthquake` limit only
+6. Inspect payload for correct path and value","When Earth Movement is provided, payload contains `EarthMovementLimit` under `DescribedCausesOfLosses/DescribedCausesOfLoss/EarthMovementLimit`; when only Earthquake is provided, payload uses the available value and still maps correctly.",High,Functional;Positive,[OptimusCore/01_BaseRepo/UserStory/1821.md]
+TC-1821-06,FloodLimit_Sent_To_ODS,Verify Flood Limit is sent to ODS using the specified payload tag path,"1. Login and select the property flow
+2. Enter Flood coverage limit on the relevant screens
+3. Save and generate payload
+4. Inspect payload for `FloodLimit` under `FormsList/Form/DescribedCausesOfLosses/DescribedCausesOfLoss/FloodLimit`","Payload contains `FloodLimit` at the expected path and the numeric value matches the Flood coverage limit entered in the UI.",High,Functional;Integration,[OptimusCore/01_BaseRepo/UserStory/1821.md]
+TC-1821-07,DoNot_Send_BM_And_WaterDamage_Limits_Negative,Verify Boiler and Water Damage limits are not sent when not required,"1. Login and select a property LOB under Automated Coding
+2. Enter values for Boiler Maintenance and Water Damage limit fields if present
+3. Save and generate payload
+4. Inspect the outbound payload for any BM or Water Damage limit tags","Payload does not include Boiler Maintenance or Water Damage limit tags. Only EQ, Flood, and POED related limits are included per story requirements.",High,Negative;Validation,[OptimusCore/01_BaseRepo/UserStory/1821.md]
+TC-1821-08,Coverage_Limits_Demarcated_In_Payload,Verify coverage limits are demarcated correctly in the payload for the listed coverages,"1. Login and select required property LOB
+2. Enter values for POED, EQ/Earthquake, and Flood coverage limits
+3. Save and generate payload
+4. Inspect payload tag paths for each coverage limit","Payload contains distinct tag paths for each coverage limit and each limit is demarcated correctly according to the story's declaration form paths.",High,Functional;DataValidation,[OptimusCore/01_BaseRepo/UserStory/1821.md]
+TC-1821-09,Navigation_EndToEnd_CreateQuote_And_Verify_Payload,Verify full navigation from quote creation through binder/policy while preserving limit mappings,"1. Login to ez docs application
+2. Select required LOB and product
+3. Fill all required fields including `Policy Limit`, POED, EQ/Earthquake, and Flood values
+4. Create quote and preview document
+5. Create binder and policy
+6. Inspect payload generated at each stage","Limit values are preserved through create quote, preview document, binder creation, and policy creation. Payload continues to contain the required limit fields and mappings.",High,Navigation;Integration,[OptimusCore/01_BaseRepo/UserStory/1821.md]
+TC-1821-10,Information_Tab_And_DescribedCauses_UI_Fields_Verified,Verify UI screens include the required limit fields and labels for property coverage limits,"1. Login to ez docs application
+2. Navigate to Information tab and Described Causes of Losses tab
+3. Confirm display of `Policy Limit`, POED, EQ/Earthquake, and Flood limit fields
+4. Confirm label text and field placement are accurate","UI screens display the required limit fields for property coverage. Labels are correct and the fields are visible in the appropriate tabs/form sections.",Medium,UI;Regression,[OptimusCore/01_BaseRepo/UserStory/1821.md]
+TC-1821-11,Payload_Tag_Path_Verification_For_All_Limits,Verify exact payload tag paths for LimitOfLiability, PDLimitOfLiability, EarthMovementLimit and FloodLimit,"1. Login and select required property LOB
+2. Enter values for Policy Limit, POED, EQ/Earthquake, and Flood
+3. Save and generate payload
+4. Inspect the payload for the following paths: LimitOfLiability, PDLimitOfLiability, EarthMovementLimit, FloodLimit","Payload contains:
+- `FormsList/Form/LimitOfLiability`
+- `FormsList/Form/PropertyCoverageLimits/PropertyCoverageLimit/PDLimitOfLiability`
+- `FormsList/Form/DescribedCausesOfLosses/DescribedCausesOfLoss/EarthMovementLimit`
+- `FormsList/Form/DescribedCausesOfLosses/DescribedCausesOfLoss/FloodLimit`
+All values match the entered coverage limits.",High,Functional;DataValidation,[OptimusCore/01_BaseRepo/UserStory/1821.md]

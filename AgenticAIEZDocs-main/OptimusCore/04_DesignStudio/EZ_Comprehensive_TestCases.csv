@@ -1,0 +1,798 @@
+Test ID,Test Case Name,Description,Test Type,Priority,Category,User Story,Acceptance Criteria,Steps,Expected Results,Notes
+TC_1455_001,Drop Down Endorsement Form Visibility,Verify ZC-FLXS-256-C CW and ZC-FLXS-256-C FR forms are visible and accessible in the form library for English and French versions.,Positive,High,Form Availability,1455,"Form visibility: English and French versions available",1. Login to EZDocs
+2. Navigate to Financial Lines > Excess Select
+3. Go to Forms tab
+4. Click Add Endorsement
+5. Search for ZC-FLXS-256-C,1. Both English (ZC-FLXS-256-C CW) and French (ZC-FLXS-256-C FR) forms appear in search results
+2. Forms are selectable and addable,Forms for Drop Down Endorsement
+TC_1455_002,Drop Down Endorsement Form Addition,Verify user can add ZC-FLXS-256-C CW form to submission without errors.,Positive,High,Form Management,1455,"Form can be added to submission","1. Login to EZDocs
+2. Open Financial Lines > Excess Select submission
+3. Navigate to Forms tab
+4. Click Add Endorsement
+5. Select ZC-FLXS-256-C CW
+6. Click Add/Confirm","1. Form is successfully added to the submission
+2. Form appears in the Forms list with correct form number
+3. Edit option is available for the added form",New form version
+TC_1455_003,Fill Growing Table Fields - Policy Coverage and Sublimit,Verify growing table can accept Policy Coverage string and Sublimit dollar amount inputs for ZC-FLXS-256-C CW.,Positive,High,Field Validation,1455,"Growing table accepts: Policy Coverage <String>, Sublimit <$ amount>, Total Underlying sublimit <$ amount>","1. Login to EZDocs
+2. Open Financial Lines > Excess Select submission
+3. Add ZC-FLXS-256-C CW form
+4. Click Fill-in Details
+5. In growing table first row, enter Policy Coverage value
+6. Enter Sublimit dollar amount
+7. Enter Total Underlying sublimit
+8. Click Save","1. Growing table row accepts Policy Coverage text input
+2. Dollar amount fields accept numeric values with currency formatting
+3. All three fields save successfully
+4. Data persists on form reload",Growing table with dependencies
+TC_1455_004,Growing Table Add Row Function,Verify user can add additional rows to the growing table for multiple policies.,Positive,High,Form Functionality,1455,"Growing table: multiple rows can be added","1. Login to EZDocs
+2. Open Financial Lines > Excess Select with ZC-FLXS-256-C CW
+3. Click Fill-in Details
+4. In growing table, complete first row
+5. Click Add Row button
+6. Fill second row with different values
+7. Add third row
+8. Save form","1. Add Row button is visible and functional
+2. New rows are added successfully
+3. Each row maintains independent data
+4. All rows save together
+5. Row count increases as expected",Multiple row management
+TC_1455_005,DIC Endorsement Lead Policy Information Entry,Verify ZC-FLXS-11817 U form accepts Lead DIC policy information (Name of Lead DIC policy insurer, Policy No, Limit of Liability).,Positive,High,Field Validation,1455,"DIC form fields: Lead DIC policy insurer name, Policy No, Limit of Liability <$ amount>","1. Login to EZDocs
+2. Open Financial Lines > Excess Select submission
+3. Add ZC-FLXS-11817 U form (DIC Endorsement)
+4. Click Fill-in Details
+5. Enter insurer name (alphanumeric)
+6. Enter Policy number (alphanumeric)
+7. Enter Limit of Liability (dollar amount)
+8. Save form","1. All three fields accept input without validation errors
+2. Alphanumeric fields accept mixed case, numbers, and special characters
+3. Dollar field accepts currency formatting
+4. Data saves and persists",DIC growing table
+TC_1455_006,DIC Other Underlying Policy Information Entry,Verify ZC-FLXS-11817 U form accepts Other underlying DIC policy information in growing table.,Positive,High,Field Validation,1455,"DIC form: Other underlying DIC policy fields with multiple rows","1. Login to EZDocs
+2. Open Financial Lines > Excess Select with ZC-FLXS-11817 U form
+3. Click Fill-in Details
+4. Scroll to Other underlying DIC policy section
+5. Enter insurer name
+6. Enter Policy number
+7. Enter Limit of Liability
+8. Click Add Row to add multiple policies
+9. Save","1. Other underlying policy section displays correctly
+2. All rows accept alphanumeric insurer names
+3. Policy numbers stored with proper formatting
+4. Limits of Liability display with currency
+5. Multiple rows manage independently",Multiple underlying policies
+TC_1455_007,Guaranteed Renewal Endorsement Form Accessibility,Verify ZC-FLXS-11819 U (Guaranteed Renewal Endorsement) form is visible and can be added to submission.,Positive,High,Form Availability,1455,"Guaranteed Renewal form is available and fillable","1. Login to EZDocs
+2. Navigate to Financial Lines > Excess Select
+3. Go to Forms tab
+4. Click Add Endorsement
+5. Search for ZC-FLXS-11819 U
+6. Add form","1. Form appears in search results
+2. Form can be successfully added
+3. Fill-in Details option is available
+4. Form displays without errors",Form ZC-FLXS-11819 U
+TC_1455_008,Difference in Condition Endorsement Form - No Subrogation,Verify ZC-FLXS-11816 U and ZC-FLXS-11816 G forms (DIC with No Subrogation) are available and fillable.,Positive,High,Form Availability,1455,"DIC forms with No Subrogation clause available in English and French","1. Login to EZDocs
+2. Navigate to Financial Lines > Excess Select
+3. Add forms ZC-FLXS-11816 U and ZC-FLXS-11816 G
+4. Click Fill-in Details for each
+5. Verify all fields display","1. Both English and French versions accessible
+2. No Subrogation Against Insured Person clause displays
+3. Drop Down Coverage is present and functional
+4. Growing table for policy information displays",DIC endorsement forms
+TC_1455_009,Create Quote from Forms with Endorsements,Verify user can create a quote successfully after completing all required endorsement forms.,Positive,High,Quote Generation,1455,"Quote creation succeeds after form completion","1. Login to EZDocs
+2. Select Financial Lines > Excess Select
+3. Fill all required submission fields
+4. Add ZC-FLXS-256-C CW and fill details
+5. Add ZC-FLXS-11819 U and fill details
+6. Navigate to Quote section
+7. Click Create Quote","1. Quote button is enabled and clickable
+2. Quote is generated without errors
+3. Quote displays form information correctly
+4. Quote timestamp recorded
+5. Quote status shows as active",BAU Release form effective date
+TC_1455_010,Preview Quote in English,Verify quote preview displays all form content and filled data correctly in English language.,Positive,High,Document Preview,1455,"English preview: All forms and data visible in English","1. Login to EZDocs
+2. Create a quote with forms ZC-FLXS-256-C CW and ZC-FLXS-11817 U
+3. Click Preview Document
+4. Select English language
+5. Review preview","1. Preview loads without errors
+2. All form titles display in English
+3. All filled data appears in preview
+4. Language is correctly set to English
+5. Download option available",English version preview
+TC_1455_011,Preview Quote in French,Verify quote preview displays all form content in French language where applicable.,Positive,High,Document Preview,1455,"French preview: All forms and data visible in French","1. Login to EZDocs
+2. Create a quote with forms ZC-FLXS-256-C FR and ZC-FLXS-11819 U
+3. Click Preview Document
+4. Select French language
+5. Review preview","1. Preview loads in French
+2. Form titles display in French (Avenant...)
+3. All field labels in French
+4. Data displays correctly
+5. Download option available in French",French version preview
+TC_1455_012,Validate Fields in Finalized Document,Verify all fields from endorsement forms validate correctly in the finalized document for both languages.,Positive,High,Field Validation,1455,"Field validation: All endorsement data present and accurate in document","1. Login to EZDocs
+2. Complete submission with multiple endorsement forms
+3. Create quote and preview in English
+4. Switch to French preview
+5. Verify all fields match input data","1. English preview: all fields display correctly with input data
+2. French preview: all fields display correctly with translations
+3. Currency formatting maintained across languages
+4. Growing table rows display completely
+5. No data truncation or overlap",Validation across languages
+TC_1455_013,Create Binder After Quote Approval,Verify user can proceed to create binder after quote is approved.,Positive,High,Binder Management,1455,"Binder creation: Available after quote approval","1. Login to EZDocs
+2. Create and approve quote with endorsements
+3. Navigate to Binder section
+4. Click Create Binder","1. Create Binder button is enabled
+2. Binder is created successfully
+3. All quote details carry forward to binder
+4. Binder ID generated
+5. Binder displays with endorsement forms",Quote to Binder workflow
+TC_1455_014,Create Policy from Binder,Verify user can create policy from binder with all endorsement information intact.,Positive,High,Policy Management,1455,"Policy creation: Endorsement data preserved from binder","1. Login to EZDocs
+2. Create binder with endorsement forms
+3. Navigate to Policy section
+4. Click Create Policy
+5. Review policy details","1. Policy created successfully from binder
+2. All endorsement forms transfer to policy
+3. Form data remains intact
+4. Policy number generated
+5. Policy status shows as active",Policy creation workflow
+TC_1455_015,Empty Growing Table Error Handling,Verify that empty or incomplete growing table rows prevent form submission with appropriate error messages.,Negative,High,Error Handling,1455,"Required fields validation: Growing table requires complete entries","1. Login to EZDocs
+2. Add ZC-FLXS-256-C CW form
+3. Click Fill-in Details
+4. Leave growing table first row Policy Coverage blank
+5. Attempt to save","1. System shows error message for empty Policy Coverage
+2. Form cannot be saved with incomplete row
+3. Error message specifies which field is required
+4. User can correct and resubmit",Empty field validation
+TC_1455_016,Invalid Currency Amount Rejection,Verify system rejects invalid currency values in Sublimit and Total Underlying sublimit fields.,Negative,High,Data Validation,1455,"Amount fields validation: Reject non-numeric and malformed amounts","1. Login to EZDocs
+2. Add ZC-FLXS-256-C CW form
+3. Click Fill-in Details
+4. In Sublimit field, enter 'ABC' or '!@#$'
+5. Attempt to save
+6. Try negative amount '-500'
+7. Try empty field with multiple rows","1. Non-numeric characters rejected with error
+2. Special characters not accepted
+3. Negative amounts rejected with validation message
+4. System provides guidance on valid format
+5. Form prevents submission until corrected",Currency field validation
+TC_1455_017,Maximum Length Text Field Validation,Verify alphanumeric fields have maximum length limits and reject overflow.,Negative,Medium,Data Validation,1455,"Field length limits: Text fields enforce maximum character limits","1. Login to EZDocs
+2. Add ZC-FLXS-11817 U (DIC form)
+3. In Lead DIC policy insurer name field, enter 500+ character string
+4. In Policy No field, enter exceeding characters
+5. Attempt to save","1. System truncates or rejects oversized input
+2. Error message indicates maximum character limit
+3. User cannot submit with oversized data
+4. System provides feedback on character count limit",Field overflow protection
+TC_1455_018,Boundary Test - Minimum Sublimit Amount,Verify system accepts minimum valid Sublimit amount (e.g., $1 or 0).,Boundary,Medium,Boundary Testing,1455,"Amount field boundaries: Minimum amounts accepted","1. Login to EZDocs
+2. Add ZC-FLXS-256-C CW form
+3. Enter Policy Coverage text
+4. In Sublimit field, enter: $1
+5. In Total Underlying sublimit, enter: $0.01
+6. Save form","1. System accepts $1 as valid Sublimit
+2. Accepts $0.01 as valid amount
+3. No error messages for minimum valid amounts
+4. Forms save successfully
+5. Data displays with correct formatting",Minimum value acceptance
+TC_1455_019,Boundary Test - Maximum Sublimit Amount,Verify system accepts large but reasonable Sublimit amounts and rejects unrealistic maximums.,Boundary,Medium,Boundary Testing,1455,"Amount field boundaries: Large valid amounts accepted, excessive amounts rejected","1. Login to EZDocs
+2. Add ZC-FLXS-256-C CW form
+3. Enter Sublimit: $999,999,999.99
+4. Enter Total Underlying sublimit: $999,999,999.99
+5. Save
+6. Try amount exceeding system max (e.g., $999,999,999,999)","1. Accepts $999,999,999.99 and saves
+2. Rejects amounts exceeding maximum with error
+3. Error message specifies maximum allowed amount
+4. System provides clear validation feedback
+5. Form remains editable for correction",Maximum value boundary
+TC_1455_020,Boundary Test - Growing Table Row Limit,Verify system enforces reasonable maximum row count for growing table (typically 50-100 rows).,Boundary,Medium,Boundary Testing,1455,"Growing table: Reasonable row limits enforced","1. Login to EZDocs
+2. Add ZC-FLXS-11817 U (DIC form)
+3. Programmatically or manually add 100+ rows
+4. Attempt to add one more row
+5. Save form","1. System allows typical reasonable row count (50-100)
+2. System prevents adding beyond maximum
+3. Clear message: 'Maximum rows reached'
+4. User can still edit/delete existing rows
+5. Last valid rows save successfully",Row count limit
+TC_1455_021,Bilingual Form Support - English Coverage Types,Verify all coverage types and policy names display correctly in English version of endorsement forms.,Positive,High,Localization,1455,"Bilingual support: English forms display all coverage terminology correctly","1. Login to EZDocs
+2. Add ZC-FLXS-256-C CW (English Drop Down)
+3. Click Fill-in Details
+4. Verify coverage dropdown options in English
+5. Select various coverage types
+6. Create quote
+7. Preview in English","1. Coverage dropdown displays English options
+2. All field labels in English
+3. All options readable and selectable
+4. English preview shows correct terminology
+5. No language encoding issues",Bilingual form labels
+TC_1455_022,Bilingual Form Support - French Coverage Types,Verify all coverage types and policy names display correctly in French version of endorsement forms.,Positive,High,Localization,1455,"Bilingual support: French forms display all coverage terminology correctly","1. Login to EZDocs
+2. Add ZC-FLXS-256-C FR (French Avenant)
+3. Click Fill-in Details
+4. Verify coverage dropdown options in French
+5. Select various coverage types
+6. Create quote
+7. Preview in French","1. Coverage dropdown displays French options
+2. All field labels in French
+3. All options readable and selectable
+4. French preview shows correct French terminology
+5. No language encoding issues",French forms and labels
+TC_1455_023,Form Dependency - DIC Coverage Requires Lead Policy,Verify that Other underlying DIC policy section only appears when Lead DIC policy is filled for ZC-FLXS-11817 U.,Integration,High,Form Dependency,1455,"Form dependency: Underlying policies field depends on Lead policy completion","1. Login to EZDocs
+2. Add ZC-FLXS-11817 U form
+3. Click Fill-in Details
+4. Observe - Other underlying policy section should be hidden
+5. Fill Lead DIC policy information
+6. Verify Other underlying policy section appears","1. Lead policy section displays initially
+2. Other underlying policy section hidden until Lead is completed
+3. Filling Lead policy reveals underlying policy section
+4. Dependency logic works bidirectionally
+5. Clearing Lead policy hides underlying section",Conditional field display
+TC_1455_024,Integration - Quote to Document Flow,Verify complete end-to-end flow from form entry through document generation with all data preserved.,Integration,High,Workflow,1455,"Full workflow: Forms → Quote → Preview → Document with all data preserved","1. Login to EZDocs
+2. Navigate to Financial Lines > Excess Select
+3. Add ZC-FLXS-256-C CW form with Policy Coverage and Sublimit values
+4. Add ZC-FLXS-11817 U form with DIC policy info
+5. Create quote
+6. Preview in English and French
+7. Verify all data in preview
+8. Create binder
+9. Create policy","1. All data entered in forms carries through
+2. Quote displays complete information
+3. English preview shows all fields correctly
+4. French preview shows French translations
+5. Binder preserves all endorsement data
+6. Policy document includes all endorsement details
+7. No data loss in any stage",End-to-end workflow
+TC_1455_025,Integration - Multiple Form Support,Verify system can handle multiple endorsement forms added simultaneously to one submission.,Integration,High,Multi-Form,1455,"Multiple forms: System supports 3+ forms simultaneously without conflicts","1. Login to EZDocs
+2. Open Financial Lines > Excess Select
+3. Add ZC-FLXS-256-C CW form and fill
+4. Add ZC-FLXS-11816 U form and fill
+5. Add ZC-FLXS-11817 U form and fill
+6. Add ZC-FLXS-11819 U form and fill
+7. Create quote
+8. Preview document","1. All 4 forms add successfully
+2. Each form has independent fill-in details
+3. Data from each form displays correctly in quote
+4. Document includes all forms with correct data
+5. No data overlap or mixing between forms",Multiple endorsements
+TC_1455_026,Integration - Send for Booking Button (1817),Verify Send for Booking button is available on Binder tab and clickable before policy issuance.,Integration,High,Booking Integration,1817,"Send for booking button available on Binder tab for Financial Lines - Excess Select","1. Login to EZDocs
+2. Navigate to Financial Lines > Excess Select submission
+3. Complete and create binder with endorsements
+4. Go to Binder tab
+5. Locate Send for Booking button
+6. Verify button state and clickability","1. Send for Booking button displays on Binder tab
+2. Button is enabled (not greyed out)
+3. Button has reference icon as specified
+4. Button state changes appropriately
+5. Button location is consistent with design",Feature 1817 integration
+TC_1455_027,Integration - Send for Booking Disabled Post-Policy,Verify Send for Booking button becomes disabled after policy is created.,Integration,High,Booking Integration,1817,"Send for booking: Button disabled after policy issuance","1. Login to EZDocs
+2. Create binder and click Send for Booking
+3. Proceed to Policy tab
+4. Create policy
+5. Check Send for Booking button state
+6. Try to click Send for Booking","1. Send for Booking button transitions to Policy tab
+2. Button becomes greyed out/disabled
+3. Button no longer clickable post-policy
+4. Error message if attempted: 'Policy already issued'
+5. Tooltip indicates reason for disablement",Policy stage restrictions
+TC_1455_028,Negative - Invalid Insurer Name Format,Verify DIC form rejects invalid insurer names (e.g., only numbers or special characters).,Negative,Medium,Data Validation,1455,"DIC form: Insurer name requires valid alphanumeric format","1. Login to EZDocs
+2. Add ZC-FLXS-11817 U form
+3. In Lead DIC policy insurer field, enter: '12345'
+4. Try: '!@#$%' 
+5. Try: '   ' (spaces only)
+6. Attempt to save","1. Numbers-only rejected with message
+2. Special-character-only rejected
+3. Whitespace-only rejected
+4. Error indicates alphanumeric required
+5. User can correct and resubmit",Insurer name validation
+TC_1455_029,Negative - Missing Policy Number Format,Verify DIC form enforces Policy Number format requirements.,Negative,Medium,Data Validation,1455,"DIC form: Policy number required and format enforced","1. Login to EZDocs
+2. Add ZC-FLXS-11817 U form
+3. Leave Policy Number blank and try to save
+4. Enter empty spaces
+5. Enter invalid format if specified","1. Blank policy number rejected
+2. Spaces-only rejected
+3. Error message indicates required field
+4. Format message displayed if applicable
+5. User cannot save without valid policy number",Policy number validation
+TC_1455_030,Negative - Mismatched Lead and Underlying Amounts,Verify system alerts if Underlying policy limits exceed or conflict with Lead policy limit in DIC form.,Negative,Medium,Business Logic,1455,"DIC form: Underlying policy amounts validated against Lead policy","1. Login to EZDocs
+2. Add ZC-FLXS-11817 U form
+3. Set Lead DIC policy Limit: $100,000
+4. Set Other underlying policy Limit: $150,000 (exceeding lead)
+5. Attempt to save","1. System detects amount mismatch
+2. Warning or error message displayed
+3. Message indicates constraint
+4. User can acknowledge and override or correct
+5. System logs the decision",Business rule validation
+TC_1705_001,English Crime Fraudulent Impersonation No Callback,Verify ZC 10827 U 0126 form is accessible and fillable for English Crime submissions without callback provision.,Positive,High,Form Availability,1705,"English Crime forms: ZC 10827 U 0126 available and fillable","1. Login to EZDocs
+2. Navigate to Financial Lines > Crime
+3. Go to Forms tab
+4. Add Endorsement
+5. Search and add ZC 10827 U 0126
+6. Click Fill-in Details","1. Form appears in search results
+2. Form adds successfully
+3. Form title: 'Fraudulent Impersonation Endorsement (With No Callback Provision)'
+4. Fields display: Item 2 (Limit) and Item 4 (Deductible)
+5. Currency fields visible",Crime product forms
+TC_1705_002,English Crime Fraudulent Impersonation With Callback,Verify ZC 10828 U 0126 form is accessible and fillable for English Crime submissions with callback provision.,Positive,High,Form Availability,1705,"English Crime forms: ZC 10828 U 0126 available and fillable","1. Login to EZDocs
+2. Navigate to Financial Lines > Crime
+3. Add Endorsement
+4. Search and add ZC 10828 U 0126
+5. Click Fill-in Details
+6. Observe callback provision indicator","1. Form adds successfully
+2. Form title includes 'With Callback Provision'
+3. Callback provision clause visible
+4. Item 2 and Item 4 fields present
+5. Form distinct from ZC 10827 U 0126",Callback provision variant
+TC_1705_003,French Crime Fraudulent Impersonation No Callback,Verify ZC 10827 G 0126 form is accessible and fillable for French Crime submissions without callback provision.,Positive,High,Form Availability,1705,"French Crime forms: ZC 10827 G 0126 available and fillable","1. Login to EZDocs
+2. Navigate to Financial Lines > Crime > French interface
+3. Add Endorsement
+4. Search and add ZC 10827 G 0126
+5. Click Fill-in Details
+6. Verify French content","1. Form appears in French search results
+2. Form title: 'Avenant relatif à l'usurpation d'identité frauduleuse (Sans condition préalable)'
+3. Fields display in French
+4. All labels in French
+5. Form adds and opens correctly",French Crime forms
+TC_1705_004,French Crime Fraudulent Impersonation With Callback,Verify ZC 10828 G 0126 form is accessible for French Crime submissions with callback provision.,Positive,High,Form Availability,1705,"French Crime forms: ZC 10828 G 0126 available and fillable","1. Login to EZDocs
+2. Navigate to Financial Lines > Crime > French mode
+3. Add Endorsement
+4. Search and add ZC 10828 G 0126
+5. Click Fill-in Details","1. Form available in French
+2. Form title includes callback indicator in French
+3. All fields display in French
+4. Callback provision mentioned in French
+5. Form distinct from ZC 10827 G 0126",French Crime callback variant
+TC_1705_005,English PCL Fraudulent Impersonation No Callback,Verify ZC-PCL-11743 U 1225 form is accessible and fillable for English Private Company Select.,Positive,High,Form Availability,1705,"English PCL forms: ZC-PCL-11743 U 1225 available and fillable","1. Login to EZDocs
+2. Navigate to Financial Lines > Private Company Select
+3. Add Endorsement
+4. Search and add ZC-PCL-11743 U 1225
+5. Click Fill-in Details
+6. Observe form fields","1. Form appears in search
+2. Form title: 'Fraudulent Impersonation Endorsement (No Callback Provision)'
+3. Fields: Limit of Liability and Deductible in CAD
+4. Form opens without errors
+5. Currency designation shows CAD",PCL English forms
+TC_1705_006,English PCL Fraudulent Impersonation With Callback,Verify ZC-PCL-11744 U 1225 form is accessible and fillable for English Private Company Select.,Positive,High,Form Availability,1705,"English PCL forms: ZC-PCL-11744 U 1225 available and fillable","1. Login to EZDocs
+2. Navigate to Financial Lines > Private Company Select
+3. Add Endorsement
+4. Search and add ZC-PCL-11744 U 1225
+5. Click Fill-in Details","1. Form appears and adds successfully
+2. Form title includes 'Callback Provision'
+3. Callback provision clause visible
+4. Limit of Liability field (CAD)
+5. Deductible field (CAD)",PCL callback variant
+TC_1705_007,French PCL Fraudulent Impersonation No Callback,Verify ZC-PCL-11743 G 1225 form is accessible for French Private Company Select without callback.,Positive,High,Form Availability,1705,"French PCL forms: ZC-PCL-11743 G 1225 available and fillable","1. Login to EZDocs
+2. Navigate to Financial Lines > Private Company Select > French
+3. Add Endorsement
+4. Search and add ZC-PCL-11743 G 1225
+5. Click Fill-in Details","1. Form appears in French
+2. Form title in French
+3. All fields in French with CAD designation
+4. Callback provision absent from title
+5. Form opens correctly",French PCL no callback
+TC_1705_008,French PCL Fraudulent Impersonation With Callback,Verify ZC-PCL-11744 G 1225 form is accessible for French Private Company Select with callback.,Positive,High,Form Availability,1705,"French PCL forms: ZC-PCL-11744 G 1225 available and fillable","1. Login to EZDocs
+2. Navigate to Financial Lines > Private Company Select > French
+3. Add Endorsement
+4. Search and add ZC-PCL-11744 G 1225
+5. Click Fill-in Details","1. Form available in French
+2. Form title includes callback reference in French
+3. Limit of Liability field (CAD)
+4. Deductible field (CAD)
+5. All content in French",French PCL callback
+TC_1705_009,Crime Form - Limit of Liability Field Acceptance,Verify ZC 10827 U 0126 Item 2 (Limit of Liability) accepts valid dollar amounts in CAD.,Positive,High,Field Validation,1705,"Item 2 field: Accepts valid CAD currency amounts","1. Login to EZDocs
+2. Open Crime submission
+3. Add ZC 10827 U 0126
+4. Click Fill-in Details
+5. In Item 2, enter: $50,000 CAD
+6. Enter: $1,234,567.89
+7. Save form","1. Field accepts formatted currency ($50,000)
+2. Field accepts decimal amounts
+3. CAD designation preserved
+4. Data saves without errors
+5. Values display with proper formatting",Crime limit field
+TC_1705_010,Crime Form - Deductible Field Acceptance,Verify ZC 10827 U 0126 Item 4 (Deductible Amount) accepts valid dollar amounts in CAD.,Positive,High,Field Validation,1705,"Item 4 field: Accepts valid CAD currency amounts","1. Login to EZDocs
+2. Open Crime submission with ZC 10827 U 0126
+3. Click Fill-in Details
+4. In Item 4, enter: $10,000 CAD
+5. Enter: $250.50
+6. Save form","1. Deductible field accepts currency formatting
+2. Field accepts decimal values
+3. Low values like $250 accepted
+4. Data saves correctly
+5. CAD currency maintained",Crime deductible field
+TC_1705_011,PCL Form - Limit of Liability Field Acceptance,Verify ZC-PCL-11743 U 1225 Limit of Liability field accepts valid amounts.,Positive,High,Field Validation,1705,"PCL Limit field: Accepts valid CAD amounts","1. Login to EZDocs
+2. Open PCL submission
+3. Add ZC-PCL-11743 U 1225
+4. Click Fill-in Details
+5. In Limit of Liability, enter: $75,000 CAD
+6. Enter: $5,000,000.99
+7. Save","1. Limit field accepts formatted amounts
+2. Large amounts accepted
+3. Decimal precision maintained
+4. CAD currency applied
+5. Data persists",PCL limit field
+TC_1705_012,PCL Form - Deductible Field Acceptance,Verify ZC-PCL-11743 U 1225 Deductible field accepts valid amounts.,Positive,High,Field Validation,1705,"PCL Deductible field: Accepts valid CAD amounts","1. Login to EZDocs
+2. Open PCL submission with ZC-PCL-11743 U 1225
+3. Click Fill-in Details
+4. In Deductible, enter: $5,000 CAD
+5. Enter: $100.00
+6. Save","1. Deductible field accepts all valid amounts
+2. Minimum values ($100) accepted
+3. Currency formatting applied
+4. Data saves successfully
+5. Display shows CAD",PCL deductible field
+TC_1705_013,Negative - Crime Form Missing Required Limit,Verify ZC 10827 U 0126 requires Item 2 (Limit of Liability) and rejects blank submission.,Negative,High,Field Validation,1705,"Item 2 required: Cannot save form without Limit of Liability","1. Login to EZDocs
+2. Open Crime submission
+3. Add ZC 10827 U 0126
+4. Click Fill-in Details
+5. Leave Item 2 blank
+6. Fill Item 4 with $10,000
+7. Attempt to save","1. System prevents save with error message
+2. Error identifies Item 2 as required
+3. Error message: 'Limit of Liability is required'
+4. User cannot bypass validation
+5. Form remains in edit mode",Required field validation
+TC_1705_014,Negative - Crime Form Missing Required Deductible,Verify ZC 10827 U 0126 requires Item 4 (Deductible Amount) and rejects blank submission.,Negative,High,Field Validation,1705,"Item 4 required: Cannot save form without Deductible Amount","1. Login to EZDocs
+2. Open Crime submission
+3. Add ZC 10827 U 0126
+4. Click Fill-in Details
+5. Fill Item 2 with $50,000
+6. Leave Item 4 blank
+7. Attempt to save","1. System prevents save with error
+2. Error specifies Item 4 is required
+3. Error message: 'Deductible Amount is required'
+4. Form cannot be saved
+5. User prompted to fill both fields",Required field validation
+TC_1705_015,Negative - Crime Form Invalid Limit Amount,Verify ZC 10827 U 0126 rejects non-numeric values in Item 2.,Negative,High,Data Validation,1705,"Item 2 validation: Non-numeric and malformed amounts rejected","1. Login to EZDocs
+2. Open Crime submission
+3. Add ZC 10827 U 0126
+4. In Item 2, enter: 'ABC'
+5. Try: '!@#$'
+6. Try: '12A34'
+7. Attempt to save","1. Non-numeric input rejected
+2. Special characters not accepted
+3. Alphanumeric mixes rejected
+4. Error message indicates: 'Valid currency required'
+5. User can correct entry",Limit validation
+TC_1705_016,Negative - Crime Form Negative Amount,Verify ZC 10827 U 0126 rejects negative amounts in Item 2 and Item 4.,Negative,High,Business Logic,1705,"Amount fields: Negative values rejected","1. Login to EZDocs
+2. Open Crime submission
+3. Add ZC 10827 U 0126
+4. In Item 2, enter: -$50,000
+5. In Item 4, enter: -$5,000
+6. Attempt to save","1. Negative Item 2 rejected with error
+2. Negative Item 4 rejected with error
+3. System message: 'Amount must be positive'
+4. Both fields validated
+5. Form prevents save until corrected",Negative amount rejection
+TC_1705_017,Negative - PCL Form Missing Both Fields,Verify ZC-PCL-11743 U 1225 rejects submission with both Limit and Deductible blank.,Negative,High,Field Validation,1705,"PCL fields required: Both Limit and Deductible must be filled","1. Login to EZDocs
+2. Open PCL submission
+3. Add ZC-PCL-11743 U 1225
+4. Click Fill-in Details
+5. Leave both fields blank
+6. Attempt to save","1. System rejects form submission
+2. Error message lists both missing fields
+3. Error: 'Limit of Liability and Deductible required'
+4. Form cannot save
+5. User must complete both fields",Multiple required fields
+TC_1705_018,Negative - PCL Form Invalid Currency Symbol,Verify ZC-PCL-11743 U 1225 rejects non-CAD currency symbols.,Negative,Medium,Data Validation,1705,"PCL currency validation: Only CAD currency accepted","1. Login to EZDocs
+2. Open PCL submission
+3. Add ZC-PCL-11743 U 1225
+4. In Limit field, enter: $50,000 USD
+5. Enter: €75,000 EUR
+6. Attempt to save","1. USD symbol rejected
+2. EUR symbol rejected
+3. System enforces CAD only
+4. Error indicates: 'Only CAD currency permitted'
+5. User corrects to CAD",Currency enforcement
+TC_1705_019,Negative - PCL Deductible Exceeds Limit,Verify system may alert if Deductible exceeds Limit of Liability (business rule).,Negative,Medium,Business Logic,1705,"Business rule: Deductible should not exceed Limit of Liability","1. Login to EZDocs
+2. Open PCL submission
+3. Add ZC-PCL-11743 U 1225
+4. Set Limit of Liability: $50,000 CAD
+5. Set Deductible: $75,000 CAD
+6. Attempt to save","1. System detects business logic violation
+2. Warning or error message displayed
+3. Message: 'Deductible cannot exceed Limit'
+4. User can override with acknowledgment or correct
+5. Transaction logged",Business logic validation
+TC_1705_020,Boundary - Crime Form Minimum Amount,Verify ZC 10827 U 0126 accepts minimum valid amounts ($1 or lower allowed threshold).,Boundary,Medium,Boundary Testing,1705,"Minimum boundary: $1 or minimum configured threshold","1. Login to EZDocs
+2. Open Crime submission
+3. Add ZC 10827 U 0126
+4. In Item 2, enter: $1 CAD
+5. In Item 4, enter: $0.01 CAD
+6. Save form","1. System accepts $1 as minimum
+2. $0.01 accepted with or without validation
+3. Form saves without boundary errors
+4. Data displays correctly
+5. No minimum amount rejection",Minimum threshold
+TC_1705_021,Boundary - Crime Form Maximum Amount,Verify ZC 10827 U 0126 accepts large amounts up to system maximum.,Boundary,Medium,Boundary Testing,1705,"Maximum boundary: Large valid amounts accepted","1. Login to EZDocs
+2. Open Crime submission
+3. Add ZC 10827 U 0126
+4. In Item 2, enter: $999,999,999.99 CAD
+5. In Item 4, enter: $999,999,999.99 CAD
+6. Save
+7. Try exceeding: $9,999,999,999 CAD","1. Accepts $999,999,999.99
+2. Rejects amounts beyond system max
+3. Error message: 'Amount exceeds maximum'
+4. System indicates max allowed
+5. User can adjust",Maximum threshold
+TC_1705_022,Boundary - PCL Amount Decimals,Verify PCL amount fields accept 2-decimal precision and handle rounding appropriately.,Boundary,Medium,Boundary Testing,1705,"Decimal precision: Fields accept 2 decimals (e.g., $1,234.56)","1. Login to EZDocs
+2. Open PCL submission
+3. Add ZC-PCL-11743 U 1225
+4. In Limit: enter $1,234.567 (3 decimals)
+5. In Limit: enter $1,234.56 (2 decimals)
+6. Save and verify rounding","1. 3-decimal input rounded to 2 decimals
+2. 2-decimal input preserved exactly
+3. System applies consistent rounding rule
+4. Data displays with 2-decimal precision
+5. Rounding transparent to user",Decimal handling
+TC_1705_023,Boundary - Callback Provision Toggle,Verify system correctly differentiates between callback and no-callback form variants when selecting multiple.,Boundary,Medium,Form Variants,1705,"Form variants: Callback and non-callback forms selectable independently","1. Login to EZDocs
+2. Open submission
+3. Add ZC 10827 U 0126 (no callback)
+4. Add ZC 10828 U 0126 (with callback)
+5. Verify each form displays correct provision
+6. Save both","1. Both forms add successfully
+2. No callback form shows standard terms
+3. Callback form displays provision clause
+4. Forms remain independent
+5. Each form displays correctly",Variant handling
+TC_1705_024,Integration - Crime Form Complete Flow,Verify complete workflow for Crime Fraudulent Impersonation forms from entry to quote to document.,Integration,High,Workflow,1705,"Complete crime form flow: Entry → Quote → Document","1. Login to EZDocs
+2. Navigate to Financial Lines > Crime
+3. Add ZC 10827 U 0126
+4. Fill: Item 2=$100,000 CAD, Item 4=$10,000 CAD
+5. Add ZC 10828 U 0126
+6. Fill: Item 2=$200,000 CAD, Item 4=$20,000 CAD
+7. Create quote
+8. Preview in English and French
+9. Create binder and policy","1. Both forms add successfully
+2. All data entered correctly
+3. Quote generates with both forms
+4. English preview shows items in English
+5. French preview shows French translations
+6. Binder preserves all data
+7. Policy document includes both endorsements",Crime workflow
+TC_1705_025,Integration - PCL Form Complete Flow,Verify complete workflow for PCL Fraudulent Impersonation forms from entry to document generation.,Integration,High,Workflow,1705,"Complete PCL form flow: Entry → Quote → Document","1. Login to EZDocs
+2. Navigate to Financial Lines > Private Company Select
+3. Add ZC-PCL-11743 U 1225
+4. Fill: Limit=$150,000 CAD, Deductible=$15,000 CAD
+5. Add ZC-PCL-11744 U 1225
+6. Fill: Limit=$250,000 CAD, Deductible=$25,000 CAD
+7. Create quote
+8. Preview in both English and French
+9. Create binder
+10. Create policy","1. Forms add and fill successfully
+2. All values save correctly
+3. Quote includes both forms
+4. English preview shows correct terminology
+5. French preview in French
+6. Binder contains both forms
+7. Policy generated with all data",PCL workflow
+TC_1705_026,Integration - Crime and PCL Mixed Submission,Verify system allows Crime and PCL forms in same submission (if business logic permits).,Integration,Medium,Multi-Product,1705,"Mixed products: Crime and PCL forms can coexist if allowed","1. Login to EZDocs
+2. IF business allows: Navigate Financial Lines
+3. Create submission allowing both Crime and PCL
+4. Add ZC 10827 U 0126 (Crime)
+5. Add ZC-PCL-11743 U 1225 (PCL)
+6. Fill both forms
+7. Create quote
+8. Preview document","1. Both forms add (or error if not allowed)
+2. If allowed: forms coexist without conflict
+3. Quote includes both
+4. Document shows both forms distinctly
+5. Currency formatting correct for each
+6. Data integrity maintained",Business rule dependent
+TC_1705_027,Multilingual - Crime English to French Preview,Verify crime form switches correctly from English to French preview.,Positive,High,Localization,1705,"Language switch: Crime forms preview in English and French","1. Login to EZDocs
+2. Add Crime form ZC 10827 U 0126
+3. Fill Item 2 and Item 4
+4. Create quote
+5. Preview in English
+6. Switch to French preview
+7. Switch back to English","1. English preview shows English labels and values
+2. French preview shows French labels
+3. Values preserve in both language versions
+4. Switch is instantaneous
+5. Both versions contain all data",Language switching
+TC_1705_028,Multilingual - PCL English to French Preview,Verify PCL form switches correctly from English to French preview.,Positive,High,Localization,1705,"Language switch: PCL forms preview in English and French","1. Login to EZDocs
+2. Add PCL form ZC-PCL-11743 U 1225
+3. Fill Limit and Deductible
+4. Create quote
+5. Click Preview
+6. Toggle English ↔ French
+7. Verify content in each language","1. English preview clear and complete
+2. French preview in French language
+3. CAD designation maintained in both
+4. All field labels translated
+5. No data loss on switch",PCL language preview
+TC_1817_001,Send for Booking Button Visibility,Verify Send for Booking button is visible on Binder tab for automated booking LOBs.,Positive,High,Button Availability,1817,"Send for Booking button visible on Binder tab","1. Login to EZDocs
+2. Navigate to Financial Lines - Public Select LOB
+3. Create submission
+4. Fill forms and create binder
+5. Go to Binder tab
+6. Observe button area","1. Send for Booking button displays
+2. Button placed prominently on Binder tab
+3. Reference icon visible
+4. Button has consistent styling
+5. Button label clear and readable",Feature visibility
+TC_1817_002,Send for Booking Button State on Binder Tab,Verify Send for Booking button is enabled and clickable when binder is in active state.,Positive,High,Button Functionality,1817,"Send for Booking button enabled on active Binder","1. Login to EZDocs
+2. Create binder for Public Select submission
+3. Navigate to Binder tab
+4. Observe Send for Booking button state
+5. Attempt to click button
+6. System should proceed to booking","1. Button is enabled (not greyed out)
+2. Button is clickable without errors
+3. Click action recognized by system
+4. Booking process initiated
+5. No error messages on click",Button enablement
+TC_1817_003,Send for Booking Click Action,Verify clicking Send for Booking button initiates booking process.,Positive,High,Business Function,1817,"Send for Booking action: Initiates booking workflow","1. Login to EZDocs
+2. Create active binder for Financial Lines - Public Select
+3. On Binder tab, click Send for Booking button
+4. Observe system response
+5. Check booking status","1. Click registers successfully
+2. System shows loading state
+3. Booking process initiated (connects to ZIP/ODS)
+4. Confirmation message displayed
+5. System prevents duplicate sends",Booking initiation
+TC_1817_004,Send for Booking Disabled on Policy Tab,Verify Send for Booking button is disabled/hidden when moved to Policy tab.,Positive,High,Button State,1817,"Send for Booking disabled after policy creation","1. Login to EZDocs
+2. Create binder with Send for Booking sent
+3. Proceed to Policy tab
+4. Create policy
+5. Check Send for Booking button state
+6. Attempt to click if visible","1. Button is greyed out or hidden
+2. Button is no longer clickable
+3. Hover shows tooltip: 'Policy already issued'
+4. No booking action possible post-policy
+5. User cannot resend booking",Policy stage restriction
+TC_1817_005,Umbrella LOB - Send for Booking Hidden,Verify Send for Booking button is hidden for Umbrella LOB (per requirements: Umbrella - Hide).,Positive,High,LOB Configuration,1817,"Umbrella LOB: Send for Booking hidden","1. Login to EZDocs
+2. Navigate to Umbrella LOB
+3. Create submission and binder
+4. Go to Binder tab
+5. Observe button area
+6. Search for Send for Booking button","1. Send for Booking button NOT visible
+2. Button area is blank or contains different action
+3. No button element in DOM
+4. Umbrella functionality unaffected
+5. Other tabs work normally",Umbrella exclusion
+TC_1817_006,Excess LOB - Send for Booking Hidden,Verify Send for Booking button is hidden for Excess LOB (per requirements: Excess - Hide).,Positive,High,LOB Configuration,1817,"Excess LOB: Send for Booking hidden","1. Login to EZDocs
+2. Navigate to Excess LOB (e.g., Excess Select)
+3. Create submission and binder
+4. Go to Binder tab
+5. Look for Send for Booking button
+6. Verify absence of button","1. Send for Booking button NOT visible on Binder
+2. Button area is empty
+3. No booking option for Excess
+4. System functions normally otherwise
+5. Policy creation still available",Excess exclusion
+TC_1817_007,Financial Lines Public Select - Send for Booking Visible,Verify Send for Booking is visible and enabled for Financial Lines - Public Select (LOB in automated booking list).,Positive,High,LOB Configuration,1817,"Financial Lines - Public Select: Send for Booking enabled","1. Login to EZDocs
+2. Navigate to Financial Lines > Public Select
+3. Create submission with endorsements
+4. Create binder
+5. Go to Binder tab
+6. Verify Send for Booking button","1. Button is visible on Binder tab
+2. Button is enabled and clickable
+3. Clicking initiates booking
+4. Confirmation received
+5. Booking status tracked",Public Select enabled
+TC_1817_008,General Property Domestic - Send for Booking Visible,Verify Send for Booking is visible for General Property - Domestic (in automated booking list).,Positive,High,LOB Configuration,1817,"General Property - Domestic: Send for Booking enabled","1. Login to EZDocs
+2. Navigate to General Property > Domestic
+3. Create submission
+4. Create binder
+5. Go to Binder tab
+6. Verify button visibility and function","1. Send for Booking button visible
+2. Button enabled on active binder
+3. Booking process functional
+4. Status updates appropriately
+5. Integration with backend works",Gen Property Domestic
+TC_1817_009,General Liability Domestic - Send for Booking Visible,Verify Send for Booking is visible for General Liability - Domestic.,Positive,High,LOB Configuration,1817,"General Liability - Domestic: Send for Booking enabled","1. Login to EZDocs
+2. Navigate to General Liability > Domestic
+3. Create submission
+4. Create binder
+5. On Binder tab, locate Send for Booking
+6. Verify button state and function","1. Button visible on Binder tab
+2. Button is enabled
+3. Click action works
+4. Booking initiated
+5. System receives booking request",Gen Liability enabled
+TC_1817_010,Received Property - Send for Booking on Policy Tab,Verify Send for Booking button for Received Property displays on Policy tab (not Binder tab).,Positive,High,LOB Configuration,1817,"Received Property: Send for Booking on Policy tab","1. Login to EZDocs
+2. Navigate to Received Property
+3. Create submission and binder
+4. On Binder tab, verify Send for Booking button
+5. Navigate to Policy tab
+6. Verify Send for Booking button visible on Policy tab","1. Binder tab: Send for Booking not visible
+2. Policy tab: Send for Booking button visible
+3. Policy tab button is enabled
+4. Clicking on Policy tab initiates booking
+5. Button placement follows specification",Received Property variant
+TC_1817_011,Energy Property Domestic - Send for Booking on Policy Tab,Verify Send for Booking button for Energy Property - Domestic displays on Policy tab.,Positive,High,LOB Configuration,1817,"Energy Property - Domestic: Send for Booking on Policy tab","1. Login to EZDocs
+2. Navigate to Energy Property > Domestic
+3. Create submission and binder
+4. On Binder tab, check for Send for Booking
+5. Go to Policy tab
+6. Verify button on Policy tab","1. Binder tab: No Send for Booking button
+2. Policy tab: Send for Booking visible
+3. Button is enabled on Policy tab
+4. Clicking sends for booking
+5. Status updated appropriately",Energy Property variant
+TC_1817_012,Received Liability - Send for Booking on Policy Tab,Verify Send for Booking button for Received Liability displays on Policy tab.,Positive,High,LOB Configuration,1817,"Received Liability: Send for Booking on Policy tab","1. Login to EZDocs
+2. Navigate to Received Liability
+3. Create submission and binder
+4. Binder tab: check for button
+5. Navigate to Policy tab
+6. Verify Send for Booking visible","1. Binder tab: button not present
+2. Policy tab: button visible
+3. Button is enabled
+4. Click sends for booking
+5. Confirmation received",Received Liability variant
+TC_1817_013,Negative - Send for Booking Duplicate Prevention,Verify system prevents duplicate Send for Booking requests for same submission.,Negative,High,Data Integrity,1817,"Duplicate prevention: Cannot send booking twice for same submission","1. Login to EZDocs
+2. Create active binder for Public Select
+3. Click Send for Booking
+4. Receive confirmation
+5. Immediately click Send for Booking again
+6. Observe system response","1. First send succeeds
+2. Second click either disabled or shows warning
+3. Warning: 'Already sent for booking'
+4. System prevents duplicate ZIP submission
+5. ODS check prevents duplicate processing",Duplicate handling
+TC_1817_014,Negative - Send for Booking Without Required Fields,Verify Send for Booking fails if required submission fields are incomplete.,Negative,Medium,Business Logic,1817,"Validation: Required fields must be complete before Send for Booking","1. Login to EZDocs
+2. Create incomplete submission (missing required fields)
+3. Create binder anyway (if system allows)
+4. Try to click Send for Booking
+5. Observe validation behavior","1. Send for Booking button disabled
+2. Tooltip or message: 'Complete all required fields'
+3. System prevents booking submission
+4. User must complete fields first
+5. Button enabled after fields filled",Required field validation
+TC_1817_015,Negative - Send for Booking on Cancelled Binder,Verify Send for Booking is unavailable on cancelled or rejected binders.,Negative,Medium,State Validation,1817,"Cancelled binder: Send for Booking not available","1. Login to EZDocs
+2. Create binder
+3. Cancel or reject the binder
+4. Check Binder tab
+5. Attempt to send for booking","1. Send for Booking button hidden or disabled
+2. Message: 'Cannot send cancelled binder'
+3. Button state reflects binder status
+4. No booking request sent
+5. System respects binder lifecycle",Binder state validation
+TC_1817_016,Integration - Binder to Booking to Policy,Verify complete flow from Binder creation through Send for Booking to Policy generation.,Integration,High,Workflow,1817,"Complete booking flow: Binder → Send for Booking → Policy","1. Login to EZDocs
+2. Navigate to Financial Lines - Public Select
+3. Create submission with forms
+4. Create binder
+5. On Binder tab, click Send for Booking
+6. Confirm booking sent
+7. Navigate to Policy tab
+8. Create policy
+9. Verify Send for Booking disabled on Policy","1. Binder created successfully
+2. Send for Booking available on Binder tab
+3. Click sends booking to ZIP system
+4. Confirmation message displayed
+5. Policy can be created
+6. Send for Booking becomes unavailable on Policy tab
+7. System logs booking transaction",E2E booking workflow
+TC_1817_017,Integration - Send for Booking with Multiple Endorsements,Verify Send for Booking works correctly when binder contains multiple endorsement forms.,Integration,High,Multi-Form Booking,1817,"Multiple endorsements: Send for Booking includes all forms","1. Login to EZDocs
+2. Create Public Select submission
+3. Add multiple endorsement forms and fill
+4. Create binder
+5. On Binder tab, click Send for Booking
+6. Verify all forms included in booking","1. All endorsement forms persist to binder
+2. Send for Booking button functional with multiple forms
+3. Booking request sent successfully
+4. All form data included in ZIP submission
+5. Backend processes all forms correctly",Multi-form booking
+TC_1817_018,Integration - Rescinded Policy Send for Booking Button Removal,Verify Send for Booking button is removed after policy is rescinded and renewed.,Integration,Medium,Policy Lifecycle,1817,"Rescinded/Renewed: Send for Booking button removed after lifecycle","1. Login to EZDocs
+2. Create policy for Public Select
+3. Perform booking (if already in policy)
+4. Rescind policy
+5. Renew policy
+6. On new policy, check Send for Booking
+7. Create new binder for renewal
+8. Verify button state","1. Original policy: booking completed
+2. Rescinded policy: button unavailable
+3. Renewed policy binder: button available if needed
+4. No stale booking buttons
+5. System lifecycle properly reflected",Rescind/renew handling
+TC_1817_019,Boundary - Send for Booking Response Time,Verify Send for Booking completes within acceptable timeout (e.g., 30 seconds).,Boundary,Medium,Performance,1817,"Performance: Booking completes within timeout","1. Login to EZDocs
+2. Create binder for Public Select
+3. Click Send for Booking
+4. Measure response time
+5. Observe system feedback
+6. Note timeout behavior if applicable","1. Booking confirmation received within 30 seconds
+2. Loading indicator shown during processing
+3. Confirmation message displays on success
+4. Error message if timeout
+5. System handles connection issues gracefully",Performance requirement
+TC_1817_020,Boundary - Send for Booking Concurrent Requests,Verify system handles concurrent Send for Booking requests from multiple users correctly.,Boundary,Medium,Concurrency,1817,"Concurrency: System handles multiple simultaneous booking requests","1. Simulate multiple users
+2. User 1: Create binder, click Send for Booking
+3. User 2: Create different binder, click Send for Booking simultaneously
+4. Observe system behavior
+5. Verify no conflicts","1. Both requests processed independently
+2. No cross-submission data mixing
+3. Each user receives correct confirmation
+4. ZIP backend receives both bookings
+5. ODS duplicate check works correctly",Concurrent handling

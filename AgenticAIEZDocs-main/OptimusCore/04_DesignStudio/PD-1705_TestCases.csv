@@ -1,0 +1,75 @@
+Test ID,Title,Description,Steps,Expected Results,Priority,Test Type,Source
+TC_1705_001,English Crime forms visible and accessible,Verify ZC 10827 U 0126 and ZC 10828 U 0126 are visible on the Crime endorsement list and accessible for English submissions.,"1. Login to EZDocs.
+2. Create or open a new business Crime submission under Financial Lines.
+3. Navigate to the Forms tab.
+4. Click Add Endorsement.
+5. Search for ZC 10827 U 0126 and ZC 10828 U 0126.
+6. Add both forms and click Fill-in Details.","1. ZC 10827 U 0126 and ZC 10828 U 0126 are available in the endorsement list.
+2. Both forms can be added successfully.
+3. Fill-in Details opens correctly for each English form.",High,Positive,OptimusCore/01_BaseRepo/UserStory/1705.md | Acceptance: English Crime forms available and fillable
+TC_1705_002,French Crime forms visible and accessible,Verify ZC 10827 G 0126 and ZC 10828 G 0126 are visible on the Crime endorsement list and accessible for French submissions.,"1. Login to EZDocs.
+2. Create or open a new business Crime submission under Financial Lines.
+3. Navigate to the Forms tab.
+4. Click Add Endorsement.
+5. Search for ZC 10827 G 0126 and ZC 10828 G 0126.
+6. Add both forms and click Fill-in Details.","1. ZC 10827 G 0126 and ZC 10828 G 0126 are available in the endorsement list.
+2. Both forms can be added successfully.
+3. Fill-in Details opens correctly for each French form.",High,Positive,OptimusCore/01_BaseRepo/UserStory/1705.md | Acceptance: French Crime forms available and fillable
+TC_1705_003,English PCL forms visible and accessible,Verify ZC-PCL-11743 U 1225 and ZC-PCL-11744 U 1225 are visible on the Private Company Select endorsement list and accessible for English submissions.,"1. Login to EZDocs.
+2. Create or open a new business Private Company Select submission under Financial Lines.
+3. Navigate to the Forms tab.
+4. Click Add Endorsement.
+5. Search for ZC-PCL-11743 U 1225 and ZC-PCL-11744 U 1225.
+6. Add both forms and click Fill-in Details.","1. ZC-PCL-11743 U 1225 and ZC-PCL-11744 U 1225 are available in the endorsement list.
+2. Both forms can be added successfully.
+3. Fill-in Details opens correctly for each English PCL form.",High,Positive,OptimusCore/01_BaseRepo/UserStory/1705.md | Acceptance: English PCL forms available and fillable
+TC_1705_004,French PCL forms visible and accessible,Verify ZC-PCL-11743 G 1225 and ZC-PCL-11744 G 1225 are visible on the Private Company Select endorsement list and accessible for French submissions.,"1. Login to EZDocs.
+2. Create or open a new business Private Company Select submission under Financial Lines.
+3. Navigate to the Forms tab.
+4. Click Add Endorsement.
+5. Search for ZC-PCL-11743 G 1225 and ZC-PCL-11744 G 1225.
+6. Add both forms and click Fill-in Details.","1. ZC-PCL-11743 G 1225 and ZC-PCL-11744 G 1225 are available in the endorsement list.
+2. Both forms can be added successfully.
+3. Fill-in Details opens correctly for each French PCL form.",High,Positive,OptimusCore/01_BaseRepo/UserStory/1705.md | Acceptance: French PCL forms available and fillable
+TC_1705_005,Required fields enforce entry on English Crime no callback form,Verify that required fields on ZC 10827 U 0126 cannot be saved without valid amounts.,"1. Login to EZDocs.
+2. Create or open a new business Crime submission under Financial Lines.
+3. Navigate to the Forms tab and add ZC 10827 U 0126.
+4. Click Fill-in Details.
+5. Leave Item 2 and Item 4 blank and attempt to save.","1. Validation messages appear for Item 2 and Item 4.
+2. The form cannot be saved until valid amounts are entered.",High,Negative,OptimusCore/01_BaseRepo/UserStory/1705.md | Acceptance: required fields validation for Fraudulent Impersonation forms
+TC_1705_006,Invalid amount values rejected on English PCL callback form,Verify the ZC-PCL-11744 U 1225 form rejects invalid amount values and displays appropriate error messages.,"1. Login to EZDocs.
+2. Create or open a new business Private Company Select submission under Financial Lines.
+3. Navigate to the Forms tab and add ZC-PCL-11744 U 1225.
+4. Click Fill-in Details.
+5. Enter negative values, text, or malformed amounts into Limit of Liability and Deductible.
+6. Attempt to save.","1. The system prevents saving when invalid values are entered.
+2. Error messages display for invalid Limit of Liability and Deductible entries.",High,Negative,OptimusCore/01_BaseRepo/UserStory/1705.md | Acceptance: amount field validation for PCL forms
+TC_1705_007,Boundary test for minimum and large amount values,Verify the Fraudulent Impersonation forms accept boundary amount values and reject amounts outside allowed ranges.,"1. Login to EZDocs.
+2. Create or open a new business Crime submission under Financial Lines.
+3. Add ZC 10827 U 0126 and ZC 10828 U 0126.
+4. Click Fill-in Details and enter zero or a very large amount into Item 2 and Item 4.
+5. Save the form.
+6. Repeat for ZC-PCL-11743 U 1225 and ZC-PCL-11744 U 1225.","1. The forms accept zero or valid upper boundary amounts if allowed by business rules.
+2. Amounts outside allowed ranges are rejected with validation errors.",Medium,Boundary,OptimusCore/01_BaseRepo/UserStory/1705.md | Acceptance: boundary validation for Fraudulent Impersonation amounts
+TC_1705_008,Preview and document generation includes data for English Crime forms,Verify preview and generated output include ZC 10827 U 0126 and ZC 10828 U 0126 with entered values for English submissions.,"1. Login to EZDocs.
+2. Create or open a new business Crime submission under Financial Lines.
+3. Add ZC 10827 U 0126 and ZC 10828 U 0126.
+4. Complete Item 2 and Item 4 values.
+5. Select English language and click Preview.
+6. Generate the quote or binder document.","1. Preview displays both forms correctly in English.
+2. The generated document includes the forms and the entered amount values.",High,Integration,OptimusCore/01_BaseRepo/UserStory/1705.md | Acceptance: preview and document output for English Crime forms
+TC_1705_009,Preview and document generation includes data for French PCL forms,Verify preview and generated output include ZC-PCL-11743 G 1225 and ZC-PCL-11744 G 1225 with entered values for French submissions.,"1. Login to EZDocs.
+2. Create or open a new business Private Company Select submission under Financial Lines.
+3. Add ZC-PCL-11743 G 1225 and ZC-PCL-11744 G 1225.
+4. Complete Limit of Liability and Deductible values.
+5. Select French language and click Preview.
+6. Generate the quote or binder document.","1. Preview displays both forms correctly in French.
+2. The generated document includes the forms and the entered amount values.",High,Integration,OptimusCore/01_BaseRepo/UserStory/1705.md | Acceptance: preview and document output for French PCL forms
+TC_1705_010,Form visibility restricted to appropriate product and language,Verify that Crime forms do not appear for unrelated products and that PCL forms do not appear when the product is not Private Company Select.,"1. Login to EZDocs.
+2. Create or open a Binder submission under a non-Crime Financial Lines product.
+3. Navigate to the Forms tab and click Add Endorsement.
+4. Search for Crime forms.
+5. Create or open a Binder submission under a non-PCL product.
+6. Search for PCL forms.","1. Crime forms do not appear for unrelated product selections.
+2. PCL forms do not appear for unrelated non-Private Company Select products.
+3. Form visibility is restricted to the correct business lines.",Medium,Negative,OptimusCore/01_BaseRepo/UserStory/1705.md | Acceptance: product-specific form visibility

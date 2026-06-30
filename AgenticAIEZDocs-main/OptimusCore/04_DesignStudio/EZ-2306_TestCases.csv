@@ -1,0 +1,48 @@
+Test ID,Title,Description,Steps,Expected Results,Priority,Test Type,Source
+TC-2306-01,AgreedRate_Field_Accepts_Decimal,Verify `Agreed Rate of Exchange` accepts decimal numeric input and stores correctly,"1. Login to ez docs application
+2. Select required LOB
+3. Select required product
+4. Navigate to the screen containing `Agreed Rate of Exchange`
+5. Enter value `0.72653` in `Agreed Rate of Exchange`
+6. Save the record
+7. Open the record and inspect the field value","`Agreed Rate of Exchange` accepts `0.72653` and is stored/displayed as numeric decimal (0.72653). No truncation or format errors.",High,Functional;Positive,[OptimusCore/01_BaseRepo/UserStory/2306.md](OptimusCore/01_BaseRepo/UserStory/2306.md#L1-L40)
+TC-2306-02,AgreedRate_Rejects_NonNumeric,Verify non-numeric input is rejected for `Agreed Rate of Exchange`,"1. Login and navigate to screen containing `Agreed Rate of Exchange`
+2. Enter value `abc-def` into the field
+3. Attempt to save
+4. Observe validation messages and field behavior","The system prevents save and shows inline validation error: 'Please enter a valid numeric value' (or equivalent). Field accepts only numeric/decimal characters.",High,Negative;Validation,[OptimusCore/01_BaseRepo/UserStory/2306.md](OptimusCore/01_BaseRepo/UserStory/2306.md#L1-L40)
+TC-2306-03,AgreedRate_Empty_Allowed_If_Previously_Allowed,Verify blank/empty `Agreed Rate` behavior,"1. Navigate to `Agreed Rate of Exchange` field
+2. Clear the field (leave blank)
+3. Save the record
+4. Reopen the record","If business previously allowed blank, the field remains blank (null) and no derived/default value is populated. No system error unless business requires value.",Medium,Functional;Regression,[OptimusCore/01_BaseRepo/UserStory/2306.md](OptimusCore/01_BaseRepo/UserStory/2306.md#L1-L40)
+TC-2306-04,AgreedRate_Rejects_Negative,Verify negative values are handled per validation rules,"1. Enter `-0.5` into `Agreed Rate of Exchange`
+2. Save the record
+3. Inspect validation and stored value","System either rejects negative values with validation error or accepts them if business allows negatives. Behavior matches spec (if spec disallows negative, error shown).",Medium,Negative;Validation,[OptimusCore/01_BaseRepo/UserStory/2306.md](OptimusCore/01_BaseRepo/UserStory/2306.md#L1-L40)
+TC-2306-05,AdditionalComments_Field_Present_Optional,Verify `Agree Rate of Exchange Additional Comments` field is present, positioned under `Agreed Rate` and is optional,"1. Login and navigate to the screen with `Agreed Rate of Exchange`
+2. Observe UI just under `Agreed Rate of Exchange` for `Agree Rate of Exchange Additional Comments`
+3. Enter text 'Sample comment' and save
+4. Reopen record","`Agree Rate of Exchange Additional Comments` field exists directly under `Agreed Rate of Exchange`, accepts text, is optional (record saves when empty), and persists entered text.",High,Functional;Positive,[OptimusCore/01_BaseRepo/UserStory/2306.md](OptimusCore/01_BaseRepo/UserStory/2306.md#L1-L40)
+TC-2306-06,Comments_Printed_On_Subjectivities_Page,Verify comments print on Subjectivities page under Agreed Rate,"1. Enter `Agreed Rate` = 0.72653 and `Agree Rate of Exchange Additional Comments` = 'Comment A'
+2. Create quote and preview document in English
+3. Navigate to Subjectivities page of the generated document
+4. Inspect placement and content under `Agreed Rate of Exchange`","Subjectivities page contains `Agreed Rate of Exchange` with value shown, and directly under it the `Agree Rate of Exchange Additional Comments` text 'Comment A' in printed document (English).",High,UI;Integration,[OptimusCore/01_BaseRepo/UserStory/2306.md](OptimusCore/01_BaseRepo/UserStory/2306.md#L1-L40)
+TC-2306-07,Comments_Printed_On_Subjectivities_Page_French,Verify printed document in French contains the comments in correct position,"1. Repeat TC-2306-08 but preview document in French
+2. Inspect Subjectivities page","French document prints `Agree Rate of Exchange Additional Comments` under the Agreed Rate field in the expected location and translated label if applicable.",Medium,Localization;UI,[OptimusCore/01_BaseRepo/UserStory/2306.md](OptimusCore/01_BaseRepo/UserStory/2306.md#L1-L40)
+TC-2306-08,EndToEnd_Payload_Format_To_ODS,Verify the `Agreed Rate` is sent as decimal numeric to downstream ODS/ZIP feed,"1. Enter `Agreed Rate` = 0.72653 and comments
+2. Save and perform action that triggers payload to ODS/ZIP (or capture export)
+3. Inspect outbound payloads/logs for field representation","Outbound payload contains `AgreedRateOfExchange` (or equivalent) as numeric decimal (0.72653) not as string. Comments included if required by feed. No formatting issues.",High,Integration;Functional,[OptimusCore/01_BaseRepo/UserStory/2306.md](OptimusCore/01_BaseRepo/UserStory/2306.md#L1-L40)
+TC-2306-09,Navigation_EndToEnd_Create_Quote_And_Bind,Verify field flows across create quote, preview and create binder/policy as per navigation steps,"1. Login
+2. Select required LOB and product
+3. Fill required fields including `Agreed Rate` and comments
+4. Create quote
+5. Preview document (EN/FR)
+6. Create binder and create policy
+7. Reopen policy and inspect fields","`Agreed Rate` and comments persist across quote, document preview, binder and policy creation and are visible where expected.",High,Integration;Navigation,[OptimusCore/01_BaseRepo/UserStory/2306.md](OptimusCore/01_BaseRepo/UserStory/2306.md#L1-L40)
+TC-2306-10,UI_Layout_Positioning_Check,Verify UI positioning follows template (Agreed Rate then Comments under it),"1. Open screen in standard and reduced viewport widths
+2. Verify `Agreed Rate` is above `Additional Comments` and spacing matches design
+3. Verify no overlap or layout break","Field order and spacing comply with UI template; comments field is directly under Agreed Rate and visible without scrolling on typical resolutions.",Medium,UI;Regression,[OptimusCore/01_BaseRepo/UserStory/2306.md](OptimusCore/01_BaseRepo/UserStory/2306.md#L1-L40)
+TC-2306-11,Validation_Message_Localization,Verify validation messages for Agreed Rate are localized appropriately,"1. Trigger a validation (enter non-numeric) and attempt save
+2. Switch app language to French
+3. Repeat and observe message","Validation messages displayed in the active UI language (EN/FR) and are meaningful to the user.",Low,Localization;Negative,[OptimusCore/01_BaseRepo/UserStory/2306.md](OptimusCore/01_BaseRepo/UserStory/2306.md#L1-L40)
+TC-2306-12,Audit_Logging_And_Change_History,Verify changes to Agreed Rate and Comments are logged for audit/change history,"1. Modify `Agreed Rate` and `Agree Rate of Exchange Additional Comments`
+2. Save
+3. Check audit/change history for the record","Audit log contains entries noting the change to `Agreed Rate` (old -> new) and comment field changes with timestamp and user.",Medium,Security;Audit,[OptimusCore/01_BaseRepo/UserStory/2306.md](OptimusCore/01_BaseRepo/UserStory/2306.md#L1-L40)

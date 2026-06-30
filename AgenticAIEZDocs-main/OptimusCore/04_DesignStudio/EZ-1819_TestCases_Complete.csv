@@ -1,0 +1,32 @@
+Test ID,Title,Description,Steps,Expected Results,Priority,Test Type,Source
+TC-1819-01,LimitOfLiability_Present_In_Payload,Verify that the Limit of Liability field is added to the payload when present in source,"1. Prepare EzDocs source record with LimitOfLiability = 1000000.
+2. Trigger payload generation from EzDocs.
+3. Capture the generated payload.
+4. Inspect payload for LimitOfLiability field.","Payload contains a `LimitOfLiability` field with value 1000000 matching the source (type and format).",High,Functional,[OptimusCore/01_BaseRepo/UserStory/1819.md](OptimusCore/01_BaseRepo/UserStory/1819.md#L1-L40)
+TC-1819-02,BlanketDeductible_Present_In_Payload,Verify that the Blanket Deductible field is added to the payload when present in source,"1. Prepare EzDocs source record with BlanketDeductible = 5000.
+2. Trigger payload generation.
+3. Capture and inspect payload for BlanketDeductible.","Payload contains a `BlanketDeductible` field with value 5000 matching the source.",High,Functional,[OptimusCore/01_BaseRepo/UserStory/1819.md](OptimusCore/01_BaseRepo/UserStory/1819.md#L1-L40)
+TC-1819-03,Fields_Correctly_Fetched_Various_Formats,Verify values are fetched correctly from source for different formats (currency, integer, decimal),"1. Create multiple source records: currency format '$1,000,000', integer 1000000, decimal 1000000.00.
+2. Trigger payload generation for each.
+3. Inspect payload values and types.","Payload reflects numeric values consistently (e.g., 1000000) regardless of source formatting; no incorrect parsing or rounding.",High,Functional;DataValidation,[OptimusCore/01_BaseRepo/UserStory/1819.md](OptimusCore/01_BaseRepo/UserStory/1819.md#L1-L40)
+TC-1819-04,Payload_Data_Consistent_Across_Records,Verify payload reflects accurate and consistent data for both fields across multiple records,"1. Prepare a batch of 10 source records with varying LimitOfLiability and BlanketDeductible values.
+2. Trigger a bulk payload generation.
+3. Inspect each payload entry and cross-check with source.","All payload entries contain LimitOfLiability and BlanketDeductible matching their respective source records with no mismatches.",High,Integration,[OptimusCore/01_BaseRepo/UserStory/1819.md](OptimusCore/01_BaseRepo/UserStory/1819.md#L1-L40)
+TC-1819-05,Missing_Source_Values_Not_Derived,Verify missing source values are not derived or populated by derived logic,"1. Prepare a source record with empty/null LimitOfLiability and BlanketDeductible.
+2. Trigger payload generation.
+3. Inspect payload and system logs/validation messages.","Payload should either omit the fields or include them as null (per system schema) but must NOT contain a derived/calculated value; system logs a missing-source notice.",High,Negative;Functional,[OptimusCore/01_BaseRepo/UserStory/1819.md](OptimusCore/01_BaseRepo/UserStory/1819.md#L1-L40)
+TC-1819-06,No_Derived_Logic_Override,Ensure payload does not depend on derived logic for these fields,"1. Configure a test where derived calculation would produce a different value than the direct source (e.g., derived = source * 1.1).
+2. Ensure source contains base values.
+3. Trigger payload generation and inspect payload.","Payload shows the original source values for LimitOfLiability and BlanketDeductible (not the derived calculation), proving no dependency on derived logic.",High,Negative;Functional,[OptimusCore/01_BaseRepo/UserStory/1819.md](OptimusCore/01_BaseRepo/UserStory/1819.md#L1-L40)
+TC-1819-07,Incorrect_Mapping_Detection,Detect incorrect mapping of fields to payload,"1. Intentionally mis-map LimitOfLiability to a wrong source field in a staging environment.
+2. Trigger payload generation.
+3. Run a comparison between expected and actual payload mappings.","Test harness detects mapping mismatches (payload value differs from expected source) and reports failures; mapping bug surfaced.",Medium,Negative;Mapping,[OptimusCore/01_BaseRepo/UserStory/1819.md](OptimusCore/01_BaseRepo/UserStory/1819.md#L1-L40)
+TC-1819-08,Boundary_Values_And_Invalid_Data,Verify behavior for boundary, zero, very large and invalid values,"1. Prepare source records with values: 0, 1, 9999999999, negative (-1000), and non-numeric 'N/A'.
+2. Trigger payload generation for each.
+3. Inspect payload and validation handling.","Payload stores numeric values correctly for valid inputs; invalid/non-numeric inputs are either rejected or represented as null per schema and validation errors are logged.",High,Negative;Boundary,[OptimusCore/01_BaseRepo/UserStory/1819.md](OptimusCore/01_BaseRepo/UserStory/1819.md#L1-L40)
+TC-1819-09,EndToEnd_Downstream_Compatibility,Verify downstream consumer accepts and processes the payload fields correctly,"1. Generate a payload with LimitOfLiability and BlanketDeductible populated.
+2. Send payload to downstream service in test environment.
+3. Verify downstream service accepts and persists/uses the fields without error.","Downstream service accepts the payload and processes LimitOfLiability and BlanketDeductible fields; no schema or processing errors.",High,Integration,[OptimusCore/01_BaseRepo/UserStory/1819.md](OptimusCore/01_BaseRepo/UserStory/1819.md#L1-L40)
+TC-1819-10,Schema_Field_Presence_And_DataType,Verify schema contains the fields with correct data types,"1. Retrieve the payload schema or contract used by EzDocs.
+2. Inspect schema for presence of LimitOfLiability and BlanketDeductible and their declared data types.
+3. Validate a sample payload against the schema.","Schema includes `LimitOfLiability` and `BlanketDeductible` with appropriate numeric/decimal type; sample payload validates against the schema.",High,Functional;Schema,[OptimusCore/01_BaseRepo/UserStory/1819.md](OptimusCore/01_BaseRepo/UserStory/1819.md#L1-L40)
